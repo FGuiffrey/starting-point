@@ -1,0 +1,286 @@
+//
+//
+// Mixins
+//
+//
+
+/* Various */
+
+
+@mixin fontsize($arg){
+  font-size: ($arg / 16) + em;
+}
+
+@mixin bg($arg){
+  background-color: $arg;
+}
+
+@mixin block{
+  display: block;
+}
+
+@mixin inline{
+  display: inline;
+}
+
+@mixin inblock{
+  display: inline-block;
+}
+
+@mixin none{
+  display: none;
+}
+
+@mixin fullvh{
+  height: 100vh;
+}
+
+@mixin fullvw{
+  width: 100vw;
+}
+
+@mixin uppercase{
+  text-transform: uppercase;
+}
+
+
+/* Transitions */
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transform-origin($arg){
+  -webkit-transform-origin: $arg;
+  -moz-transform-origin: $arg;
+  -ms-transform-origin: $arg;
+  -o-transform-origin: $arg;
+  transform-origin: $arg;
+}
+
+@mixin transform($arg){
+  -webkit-transform: $arg;
+  -moz-transform: $arg;
+  -o-transform: $arg;
+  -ms-transform: $arg;
+  transform: $arg;
+}
+
+/* Flexbox */
+
+@mixin flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flexible($arg) {
+  -webkit-box-flex: $arg;
+  -webkit-flex: $arg;
+  -ms-flex: $arg;
+  flex: $arg;
+}
+
+@mixin wrap {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@mixin spaceBetween {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@mixin spaceAround {
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+@mixin justifyCenter {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@mixin justifyEnd {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+@mixin alignStart {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+@mixin alignEnd {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+@mixin alignCenter {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@mixin stretch {
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+@mixin alignSelf($pos: center) {
+  -webkit-align-self: $pos;
+  -moz-align-self: $pos;
+  -o-align-self: $pos;
+  align-self: $pos;
+}
+
+@mixin alignContent {
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+@mixin normalRow {
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -o-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+@mixin rowReverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+@mixin column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@mixin columnReverse {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+@mixin order($order) {
+  -webkit-box-ordinal-group: $order;
+  -moz-box-ordinal-group: $order;
+  -ms-flex-order: $order;
+  -webkit-order: $order;
+  order: $order;
+}
+
+/* Border radius */
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+/* Background gradient */
+
+@mixin gradient($color1, $color2) {
+  background: linear-gradient(to right, $color1, $color2);
+}
+
+/* Box Shadow */
+
+@mixin box-shadow($args...) {
+  -webkit-box-shadow: $args;
+  -moz-box-shadow: $args;
+  box-shadow: $args;
+}
+
+
+/*********************
+BREAKPOINTS
+*********************/
+
+
+// CHOOSE OR CREATE :P
+
+//@mixin breakpoint($point) {
+//  @if $point == desktop {
+//    @media (min-width: 70em) { @content ; }
+//  }
+//  @else if $point == laptop {
+//    @media (min-width: 64em) { @content ; }
+//  }
+//  @else if $point == tablet {
+//    @media (min-width: 50em) { @content ; }
+//  }
+//  @else if $point == phablet {
+//    @media (min-width: 37.5em)  { @content ; }
+//  }
+//  @else if $point == mobileonly {
+//    @media (max-width: 37.5em)  { @content ; }
+//
+//  }
+//}
+
+@mixin breakpoint($point) {
+
+  @if $point == medium-desktop {
+    @media only screen and (max-width: 1280px) { @content ; }
+  }
+
+  @else if $point == large-desktop {
+    @media only screen and (min-width: 1520px) { @content ; }
+  }
+
+  @else if $point == desktop {
+    @media only screen and (min-width: 1025px) { @content ; }
+  }
+
+  @else if $point == tablet-h {
+    @media (max-width: 1024px) { @content ; }
+  }
+
+  @else if $point == tablet-v {
+    @media (max-width: 768px) { @content ; }
+  }
+
+  @else if $point == mobile {
+    @media (max-width: 480px) { @content ; }
+  }
+
+  @else if $point == small-mobile {
+    @media (max-width: 320px) { @content ; }
+  }
+
+  @else if $point == mobileLandscape {
+    @media screen and (max-width: 768px) and (orientation: landscape) { @content ; }
+  }
+
+  @else if $point == iPadPro {
+    @media screen and (width: 1024px) and (orientation: portrait) { @content ; }
+  }
+}

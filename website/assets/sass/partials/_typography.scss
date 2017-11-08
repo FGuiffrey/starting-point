@@ -1,0 +1,107 @@
+//
+//
+// Typo Style
+//
+//
+
+//
+// Font-face inludes
+//
+
+//@font-face {
+//  font-family: "Sansus";
+//  src: url("../../files/fonts/Sansus-Webissimo-Regular.woff");
+//}
+
+//
+// Styles
+//
+
+//EM Basis
+$em: 16px;
+
+//
+//Typos
+//
+
+//$font-sansus: Sansus, Helvetica, Arial, sans-serif;
+
+body{
+  font-size: $em;
+  color: $black;
+}
+
+p{
+  font-size: 1.3em;
+  line-height: 1.4em;
+}
+
+//.thin{
+//  font-family: ...;
+//}
+//
+//.bold{
+//  font-family: ...;
+//}
+//
+//.semibold{
+//  font-family: ...;
+//}
+//
+
+.bold{
+  font-weight: bold;
+}
+
+.italic{
+  font-style: italic;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+strong{
+  @extend .bold;
+}
+
+u{
+  text-decoration: underline;
+}
+
+em{
+  @extend .italic;
+}
+
+h1{
+  @include fontsize(48);
+
+  @include breakpoint(tablet-v){
+    @include fontsize(36);
+  }
+}
+
+h1 .strong{
+
+}
+
+h2{
+  @include fontsize(36);
+
+  @include breakpoint(tablet-v){
+    @include fontsize(28);
+  }
+}
+
+h3{
+  @include fontsize(24);
+
+  @include breakpoint(tablet-v){
+    @include fontsize(22);
+  }
+}
+
+.small{
+  @include fontsize(11);
+}
+

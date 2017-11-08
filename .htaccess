@@ -1,0 +1,47 @@
+#Force www:
+RewriteEngine on
+#RewriteCond %{HTTP_HOST} ^mywebsite.fr [NC]
+#RewriteRule ^(.*)$ https://www.mywebsite.fr/$1 [L,R=301,NC]
+#
+#
+##Force https
+#RewriteCond %{HTTPS} off
+## First rewrite to HTTPS:
+## Don't put www. here. If it is already there it will be included, if not
+## the subsequent rule will catch it.
+#RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+## Now, rewrite any request to the wrong domain to use www.
+## [NC] is a case-insensitive match
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+<IfModule mod_headers.c>
+  <FilesMatch ".(js|css|xml|gz|html)$">
+    Header append Vary: Accept-Encoding
+  </FilesMatch>
+</IfModule>
+
+
+#Models
+
+#RewriteRule ^mypage\.html$ /pages/mypage\.php [L]
+#RewriteRule ^web-([^/]*)\.html$ /dev\.php?url=$1 [L]
+#RewriteRule ^like-([0-9]+)-([0-9]+)-([^/]*)\.html$ /includes/like\.php?id=$1&idtable=$2&url=$3 [L]
+
+
+####
+###
+##
+#Error pages
+##
+###
+####
+ErrorDocument 400 /pages/errors/400.php
+ErrorDocument 401 /pages/errors/401.php
+ErrorDocument 403 /pages/errors/403.php
+ErrorDocument 404 /pages/errors/404.php
+ErrorDocument 500 /pages/errors/500.php
+
+
+
