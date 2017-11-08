@@ -1,4 +1,4 @@
-# project-basis
+# starting point
 _starting point for web projects._
 
 **Created by Florian Guiffrey < www.florianguiffrey.fr >**
