@@ -11,4 +11,4 @@ _starting point for web projects._
 gulp watch
 ```
 
-*(It will automatically watch and sync your browser when you edit your `.css files)*
+*(It will automatically watch and sync your browser when you edit your .css files)*
