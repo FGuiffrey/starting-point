@@ -2,6 +2,8 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync');
+    //Working with PHP, replace previous line by : 
+    //browserSync = require('browser-sync').create();
 
 //Sass converter
 gulp.task('sass', function() {
@@ -20,6 +22,10 @@ gulp.task('browserSync', function() {
             baseDir: 'website'
         },
     })
+    //Working with PHP, replace 5 previous lines by :
+    //browserSync.init({
+    //    proxy: "http://florianguiffreyv2.fgu"
+    //});
 });
 
 gulp.task('watch', ['browserSync', 'sass'], function(){
